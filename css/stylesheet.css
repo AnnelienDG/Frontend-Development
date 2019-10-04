@@ -1,0 +1,295 @@
+/************* ALGEMEEN *************/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #C1F0F5;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+/************* HEADER ***************/
+
+body > header {
+    background-color: white;
+}
+
+#logo {
+    width: 12%;
+    max-height: 55px;
+    max-width: 76.3px;
+    display: inline;
+    padding: 0;
+    margin-left: 0.3em;
+    margin-top: 0.3em;
+    margin-bottom: 0.1em;
+    margin-right: 0.3em;
+}
+
+nav ul {
+    text-align: right;
+    padding: 0;
+    margin: 0;
+    margin-right: 0.7em;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: +1;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+li a {
+    color: white;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-family: "Myriad Pro", sans-serif;
+    margin-bottom: 0.4em;
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-end;
+    /* opacity: 0; */
+}
+
+li img {
+    width: 60px;
+    display: inline;
+}
+
+li p {
+    display: inline;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 20px;
+}
+
+li:last-child img {
+    width: 80px;
+    margin-right: -0.5em;
+}
+
+li a.open {
+    opacity: 1;
+}
+
+li:last-child img.active {
+    transform: rotate(45deg);
+}
+
+
+/******** MAIN SECTIONS ********/
+
+section {
+    position: relative;
+    margin-bottom: -0.1em;
+    margin: 1em;
+}
+
+section img {
+    object-fit: cover;
+    width: 100%;
+    height: 11em;
+    margin-bottom: -6px;
+}
+
+
+section header {
+    color: white;
+    font-family: "Myriad Pro", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-shadow: 0px 1px 6px black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1em;
+}
+
+section header h1 {
+    margin: 0;
+    padding: 0;
+}
+
+section p {
+    margin-top: 1.5em;
+}
+
+/******** MAIN ARTICLES ********/
+
+main > h1 {
+    font-family: "Myriad Pro", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    margin-left: 0.6em;
+    margin-top: 0.6em;
+    display: inline-block;
+}
+
+article {
+    background-color: white;
+    margin: 1em;
+    box-shadow: 0px 2px 4px black;
+}
+
+article img {
+    object-fit: cover;
+    width: 40%;
+    height: 8em;
+    display: inline-block;
+    vertical-align: top;
+}
+
+article header {
+    display: inline-block;
+    font-family: "Myriad Pro", sans-serif;
+    font-weight: bold;
+}
+
+article h1 {
+    font-size: 1.1em;
+    margin: 0.5em;
+    text-transform: none;
+}
+
+/******** FILTER BUTTONS ********/
+
+main > button {
+    background-color: #506DAF;
+    color: white;
+    border: none;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-family: "Myriad Pro", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+    /* nog niet responsive/optimaal */
+    display: inline-block;
+    margin-left: 9em;
+    margin-right: em;
+}
+
+/* voor nu! */
+
+aside {
+    display: none;
+}
+
+/******** RESPONSIVE ********/
+
+@media screen and (min-width: 600px) {
+    /******* MENU *******/
+    header {
+        height: 65px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        position: inherit;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    nav li {
+        margin-right: 0.4em;
+    }
+
+    #logo {
+        float: left;
+    }
+
+    li a {
+        opacity: 1;
+        color: black;
+        padding: 0.5em;
+        margin-top: 17px;
+        margin-bottom: 17px;
+    }
+
+    li a:hover {
+        color: white;
+        background-color: #4369a4;
+    }
+
+    li img {
+        display: none;
+    }
+
+    li p {
+        text-align: center;
+        padding-top: 0;
+        font-size: 1.9vw;
+    }
+
+    li:last-child img {
+        display: none;
+    }
+
+    /******* SECTIONS *******/
+    section {
+        margin-bottom: -0.1em;
+    }
+
+    section:last-child {
+        margin-bottom: 1em;
+    }
+
+    section img {
+        height: 12em;
+    }
+
+    main a {
+        font-size: 1em;
+    }
+}
+
+
+@media screen and (min-width: 800px) {
+    /******* MENU *******/
+    li p {
+        font-size: 15.2px;
+    }
+
+    /******* SECTIONS *******/
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
+    }
+
+    section {
+        margin-left: 0;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: -0.1em;
+    }
+
+    section:last-child {
+        margin-bottom: 0;
+    }
+
+    section img {
+        height: 20em;
+        max-height: 100vh;
+    }
+
+    header {
+        font-size: 1em;
+    }
+
+}

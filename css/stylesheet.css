@@ -6,9 +6,12 @@
     padding: 0;
 }
 
+html {
+    margin: 0;
+}
 
 body {
-    
+    margin: 0;
     background-color: #C1F0F5;
 }
 
@@ -40,7 +43,7 @@ header #logo {
     position: absolute;
     left: 0;
     top: 0;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
     z-index: 100;
@@ -107,6 +110,9 @@ header button img {
 
 /* menu klikken */
 
+body.menuOpen {
+    overflow: hidden;
+}
 
 body.menuOpen .overlay {
     visibility: visible;
@@ -198,54 +204,55 @@ article h1 {
     text-transform: none;
 }
 
-/******** FILTER BUTTON ********/
+/********** FILTER **********/
 
-main > button {
-    
+main button {
+
     background-color: #506DAF;
     color: white;
     border: none;
+    font-size: 1em;
     font-family: "Myriad Pro", sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     padding-right: 1.5em;
     padding-left: 1.5em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    
+    padding-top: 0.4em;
+    padding-bottom: 0.2em;
+
     /* nog niet responsive/optimaal */
     display: inline-block;
     position: absolute;
-    right: 1em;
-    top: 5em;
-    
-}
-
-/* voor nu! */
-
-aside {
-    display: none;
+    right: 0;
+    margin: 1em;
 }
 
 
 /******** RESPONSIVE ********/
 
 @media screen and (min-width: 600px) {
-    
+
     /******* MENU *******/
-    
+    .overlay {
+        background-color: rgba(0, 0, 0, 0);
+        opacity: 1;
+    }
+
     header {
         height: 65px;
     }
 
-    nav ul {
+    header nav ul {
+        position: absolute;
+        top: 0;
+        opacity: 1;
+        visibility: visible;
         flex-direction: row;
-        position: inherit;
         display: flex;
         justify-content: flex-end;
     }
 
-    nav li {
+    header nav li {
         margin-right: 0.4em;
     }
 
@@ -253,24 +260,23 @@ aside {
         float: left;
     }
 
-    li a {
-        opacity: 1;
+    header li a {
         color: black;
         padding: 0.5em;
         margin-top: 17px;
         margin-bottom: 17px;
     }
 
-    li a:hover {
+    header li a:hover {
         color: white;
         background-color: #4369a4;
     }
 
-    li img {
+    header li img {
         display: none;
     }
 
-    li p {
+    header li p {
         text-align: center;
         padding-top: 0;
         font-size: 1.9vw;
@@ -281,7 +287,6 @@ aside {
     }
 
     /******* SECTIONS *******/
-    
     section {
         margin-bottom: -0.1em;
     }
@@ -297,26 +302,27 @@ aside {
     main a {
         font-size: 1em;
     }
-    
-    /******* FILTER *******/
-    
-    main > button {
-        top: 6em;
+
+
+    /******* ARTICLES *******/
+    article img {
+        height: 15em;
     }
 }
 
 
 @media screen and (min-width: 800px) {
     /******* MENU *******/
-    li p {
+    header li p {
         font-size: 15.2px;
     }
 
     /******* SECTIONS *******/
-    main {
+    main.homeSections {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 1em;
+        margin: 1em;
     }
 
     section {
@@ -335,8 +341,19 @@ aside {
         max-height: 100vh;
     }
 
-    header {
+    section header {
         font-size: 1em;
     }
+
+    /******* ARTICLES *******/
+    main {
+        display: grid;
+        grid-gap: 1em;
+    }
+
+    main article {
+        margin: 0em 1em 0em 1em;
+    }
+
 
 }

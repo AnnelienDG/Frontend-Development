@@ -35,24 +35,75 @@
         </nav>
         <button><img src="../images/floating%20button.png" alt="Floating button"></button>
     </header>
-    <main>
+    <main class="searchArticles">
         <button>Filteren</button>
         <h1>Vind workshops</h1>
         <aside>
-
+            <form>
+                <fieldset>
+                    <legend>Thema</legend>
+                    <input type="radio" name="Theme" id="checkCake">
+                    <label for="checkCake" id="cake"></label>
+                    <input type="radio" name="Theme" id="checkOudHollands">
+                    <label for="checkOudHollands" id="oudhollands"></label>
+                    <input type="radio" name="Theme" id="checkBrood">
+                    <label for="checkBrood" id="brood"></label>
+                    <input type="radio" name="Theme" id="checkZoet">
+                    <label for="checkZoet" id="zoet"></label>
+                    <input type="radio" name="Theme" id="checkMoeilijk">
+                    <label for="checkMoeilijk" id="moeilijk"></label>
+                    <input type="radio" name="Theme" id="checkFeest">
+                    <label for="checkFeest" id="feest"></label>
+                    <input type="radio" name="Theme" id="checkBladerdeeg">
+                    <label for="checkBladerdeeg" id="bladerdeeg"></label>
+                    <input type="radio" name="Theme" id="checkMediterraan">
+                    <label for="checkMediterraan" id="mediterraan"></label>
+                </fieldset>
+                <fieldset>
+                    <legend>Regio</legend>
+                    <select>
+                       <option value="" disabled selected>Selecteer je regio</option>
+                       <option value="1">Drenthe</option>
+                       <option value="2">Flevoland</option>
+                       <option value="3">Friesland</option>
+                       <option value="4">Gelderland</option>
+                       <option value="5">Groningen</option>
+                       <option value="6">Limburg</option>
+                       <option value="7">Noord-Brabant</option>
+                       <option value="8">Noord-Holland</option>
+                       <option value="9">Overijssel</option>
+                       <option value="10">Utrecht</option>
+                       <option value="11">Zeeland</option>
+                       <option value="12">Zuid-Holland</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Overig</legend>
+                    <input type="radio" name="Detail" id="checkIndividueel">
+                    <label for="checkIndividueel" id="individueel"></label>
+                    <input type="radio" name="Detail" id="checkGroep">
+                    <label for="checkGroep" id="groep"></label>
+                    <input type="radio" name="Detail" id="checkJury">
+                    <label for="checkJury" id="jury"></label>
+                </fieldset>
+                <fieldset>
+                <input type="reset" value="Verwijder filters">
+                <button>Sluit</button>
+                </fieldset>
+            </form>
         </aside>
-
+        <div id="articlecontainer">
         <a href="#">
             <article>
                 <img src="../images/workshop-utrecht.jpg" alt="Workshop Utrecht">
                 <header>
                     <h1>Workshop Utrecht</h1>
-                    <!--
-                img of p capaciteit
-                img icons
-                h2 (prijs)
-                p of h3 (datum)
-                -->
+                    <img src="../images/icons/bladerdeeg.png">
+                    <img src="../images/icons/individueel.png">
+                    <h2>&euro;25 per persoon </h2>
+                    <p id="date">Zaterdag 21 maart
+                    <br/>
+                    9:00-13:00 uur</p>
                 </header>
             </article>
         </a>
@@ -61,14 +112,27 @@
                 <img src="../images/workshop-zeist.jpg" alt="Workshop Zeist">
                 <header>
                     <h1>Workshop Zeist</h1>
+                    <img src="../images/icons/cake.png">
+                    <img src="../images/icons/groep.png">
+                    <h2>&euro;30 per persoon </h2>
+                    <p id="date">Zondag 22 maart
+                    <br/>
+                    14:00-18:00 uur</p>
                 </header>
             </article>
         </a>
-        <a href="#">
+        <a href="workshopamstelveen.html">
             <article>
                 <img src="../images/workshop-amstelveen.jpg" alt="Workshop Amstelveen">
                 <header>
                     <h1>Workshop Amstelveen</h1>
+                    <img src="../images/icons/brood.png">
+                    <img src="../images/icons/groep.png">
+                    <img src="../images/icons/metjurylid.png">
+                    <h2>&euro;25 per persoon </h2>
+                    <p id="date">Zondag 15 maart
+                    <br/>
+                    09:00-13:00 uur</p>
                 </header>
             </article>
         </a>
@@ -77,6 +141,13 @@
                 <img src="../images/workshop-dronten.jpg" alt="Workshop Dronten">
                 <header>
                     <h1>Workshop Dronten</h1>
+                    <img src="../images/icons/moeilijk.png">
+                    <img src="../images/icons/individueel.png">
+                    <img src="../images/icons/metjurylid.png">
+                    <h2>&euro;25 per persoon </h2>
+                    <p id="date">Zaterdag 14 maart
+                    <br/>
+                    09:00-13:00 uur</p>
                 </header>
             </article>
         </a>
@@ -85,9 +156,16 @@
                 <img src="../images/workshop-leeuwarden.jpeg" alt="Workshop Leeuwarden">
                 <header>
                     <h1>Workshop Leeuwarden</h1>
+                    <img src="../images/icons/feest.png">
+                    <img src="../images/icons/GROEP.png">
+                    <h2>&euro;20 per persoon </h2>
+                    <p id="date">Zondag 28 maart
+                    <br/>
+                    14:00-18:00 uur</p>
                 </header>
             </article>
         </a>
+            </div>
     </main>
     <script src="../js/script.js"></script>
 </body>

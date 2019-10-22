@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/stylesheet.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html"><img src="../images/hbo%20logo.png" alt="Heel Holland Bakt Logo" id="logo"></a>
+            <div class="overlay">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <p>Mijn Account</p><img src="../images/Mijn%20account%20icon.png" alt="Mijn Account Icon"></a>
+                    </li>
+                    <li>
+                        <a href="vindworkshops.html">
+                            <p>Vind workshop</p><img src="../images/Vind%20workshops%20icon.png" alt="Vind Workshops Icon"></a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>Beoordeel recepten</p><img src="../images/Beoordeel%20recepten%20icon.png" alt="Beoordeel recepten icon"></a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>Recept insturen</p><img src="../images/Recepten%20insturen%20icon.png" alt="Recept insturen icon"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <button><img src="../images/floating%20button.png" alt="Floating button"></button>
+    </header>
+    <main>
+        <article>
+            <img src="../images/workshop-amstelveen.jpg">
+            <header>
+                    <h1>Workshop Amstelveen</h1>
+                    <h2>&euro;25 per persoon </h2>
+                    <p id="date">Zondag 15 maart
+                    <br/>
+                    09:00-13:00 uur</p>
+                    <p id="adres">Noorddammerlaan 126
+                    <br/>
+                    1187 AG Amstelveen</p>
+                    <a href="https://www.google.com/maps/place/Sint-Urbanuskerk/@52.2935033,4.8315333,16.5z/data=!4m13!1m7!3m6!1s0x47c5e1d0cb4f622f:0x6773f1de9d9b076f!2sAmstelveen!3b1!8m2!3d52.2942064!4d4.8419936!3m4!1s0x47c5e039e64b5fff:0x38c134363ccb44c7!8m2!3d52.2940203!4d4.8340072">Route</a>
+                </header>
+            <section>
+                <h2>Over deze workshop</h2>
+                <p><img src="../images/icons/brood.png">Het thema van deze workshop is brood.</p>
+                <p><img src="../images/icons/groep.png">Binnen de workshop wordt in groepsverband samengewerkt.</p>
+                <p><img src="../images/icons/metjurylid.png">Janny van der Heijden, jurylid van Heel Holland Bakt, is bij deze workshop aanwezig.<br/><br/>
+                Dit betekent dat de kans bestaat dat u na afloop gevraagd wordt om deel te nemen aan een casting voor de tv-show. Daarbij wordt gekeken naar persoonlijkheid en baktalent.</p>
+            </section>
+            <section>
+                <h2>Signatuuropdracht</h2>
+                <p>Tijdens de workshop is er een signatuur- en een technische opdracht. Het type baksel van de signatuuropdracht wordt van te voren bekend gemaakt. </p>
+                <p id="timer"></p>
+            </section>
+            <section>
+                <h2>Tickets</h2>
+                <form>
+                    <fieldset>
+                        <input type="number" id="tickets" name="tickets"
+                        min="1" max="10">
+                        <label for="tickets">Bakker(s)</label>
+                    </fieldset>
+                    <fieldset>
+                        <input type="checkbox" id="afhuren" name="afhuren" disabled="disabled">
+                        <label for="afhuren">Huur deze workshop exclusief af (minimaal 12 personen) voor &euro;400,-</label>
+                    </fieldset>
+                        <button type="button">Doe mee met deze workshop</button>
+                </form>
+            </section>
+        </article>
+    </main>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -115,8 +115,7 @@ body.menuOpen {
     overflow: hidden;
 }
 
-/* Het was niet gelukt om de rand onderaan de pagina weg te halen (dankzij de overlay), dus ik heb ervoor gezorgd dat je niet omlaag kan scrollen als het menu open is.
-Scrollbar verwijderen ziet er stom uit op pc, maar op de telefoon zie je het niet. */
+/* Scrollbar verwijderen ziet er stom uit op pc, maar op de telefoon zie je het niet. */
 
 body.menuOpen .overlay {
     visibility: visible;

@@ -8,7 +8,7 @@ var workshopbutton = document.querySelector('main article section form button');
 // Aftel counter afgehaald op: "https://www.w3schools.com/howto/howto_js_countdown.asp" (october, 2019)
 // Deze wel aangepast naar eigen behoeften
 
-var countDownDate = new Date("Nov 1, 2019 20:00:00").getTime();
+var countDownDate = new Date("Nov 1, 2020 20:00:00").getTime();
 var x = setInterval(function () {
 
 var now = new Date().getTime();

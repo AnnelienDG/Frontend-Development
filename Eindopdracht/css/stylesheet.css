@@ -1,0 +1,891 @@
+/****************************************************************
+***************************ALGEMEEN******************************
+*****************************************************************/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    background-color: #C1F0F5;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/****************************************************************
+***************************HOOFDMENU*****************************
+*****************************************************************/
+
+body > header {
+    background-color: white;
+}
+
+header #logo {
+    width: 12%;
+    max-height: 55px;
+    max-width: 76.3px;
+    display: inline;
+    margin: 0.3em 0.3em 0.1em 0.3em;
+}
+
+.overlay {
+    transition: all .5s ease;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/* Overlay: Dit is de donkere overlay die ervoor zorgt dat de achtergrond donker wordt. */
+
+header nav ul {
+    opacity: 0;
+    text-align: right;
+    margin: 0 0.7em 0 0;
+    position: fixed;
+    bottom: -5em;
+    right: 0;
+    z-index: 100;
+    transition: all 0.5s ease;
+}
+
+header nav li {
+    list-style-type: none;
+}
+
+header li a {
+    color: white;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-family: "Myriad Pro", sans-serif;
+    margin-bottom: 0.4em;
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+header li img {
+    width: 60px;
+    display: inline;
+}
+
+header li p {
+    display: inline;
+    padding: 20px 0.5em 0 0.5em;
+}
+
+header button {
+    text-align: right;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 101;
+    width: 80px;
+    height: 80px;
+    background: none;
+    border: none;
+}
+
+header button img {
+    transition: all .5s;
+    width: 80px;
+}
+
+
+/******************MENU OPEN EN DICHT KLIKKEN*********************/
+
+body.menuOpen {
+    overflow: hidden;
+}
+
+
+/* Scrollbar verwijderen ziet er stom uit op pc, maar op de telefoon zie je het niet. */
+
+body.menuOpen .overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+body.menuOpen button img {
+    transform: rotate(45deg);
+}
+
+
+/* floating button draait als het menu open gaat */
+
+body.menuOpen nav ul {
+    bottom: 5em;
+    opacity: 1;
+}
+
+
+/* nav ul = menu opties; verschuiven naar boven als het menu open gaat */
+
+/****************************************************************
+*****************MAIN SECTIONS OP DE HOOFDPAGINA*****************
+*****************************************************************/
+
+section {
+    position: relative;
+    margin: 1em 1em -0.1em 1em;
+}
+
+section img {
+    object-fit: cover;
+    width: 100%;
+    height: 11em;
+    margin-bottom: -6px;
+}
+
+section header {
+    color: white;
+    font-family: "Myriad Pro", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-shadow: 0px 1px 6px black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1em;
+}
+
+section header h1 {
+    margin: 0;
+    padding: 0;
+}
+
+section p {
+    margin-top: 1.5em;
+}
+
+
+/****************************************************************
+***************MAIN ARTICLES OP HET OVERZICHTSPAGINA*************
+*****************************************************************/
+
+main > h1 {
+    font-family: "Myriad Pro", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    margin: 0.6em 0 0 0.6em;
+    display: inline-block;
+}
+
+article {
+    background-color: white;
+    margin: 1em;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+main.searchArticles article > img,
+article > img {
+    margin: 0.5em;
+    object-fit: cover;
+    width: 40%;
+    height: 8.5em;
+    display: inline-block;
+    vertical-align: top;
+}
+
+article header,
+main.searchArticles article header {
+    display: inline-block;
+    font-family: "Myriad Pro", sans-serif;
+    font-weight: bold;
+}
+
+main.searchArticles article header h1 {
+    transition: 1s;
+    margin: 0.5em 0 0.2em 0;
+    font-size: 0.9em;
+    text-transform: none;
+    text-transform: uppercase;
+}
+
+article header img {
+    transition: 1s;
+    object-fit: cover;
+    width: auto;
+    height: 2.9em;
+}
+
+article header h2 {
+    font-family: "Myriad Pro", sans-serif;
+    font-size: 0.9em;
+}
+
+article header p:first-of-type {
+    transition: 1s;
+    margin: 1em 0 0 0;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
+
+/****************************************************************
+***************ASIDE FILTER OP HET OVERZICHTSPAGINA**************
+*****************************************************************/
+
+main button:first-child {
+    transition: all 0.5s ease;
+    background-color: #506DAF;
+    color: white;
+    border: 3px solid #506DAF;
+    font-size: 1em;
+    font-family: "Myriad Pro", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.4em 1.5em 0.2em 1.5em;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    margin: 0.7em 1em;
+}
+
+main aside form {
+    visibility: hidden;
+    transition: all 0.5s ease;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    padding: 1em;
+    border: 3px solid #506DAF;
+    margin: 1em 1em 0 0;
+    max-width: 300px;
+}
+
+fieldset {
+    color: #506DAF;
+    border: none;
+    font-size: 1em;
+    font-family: "Myriad Pro", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+}
+
+legend {
+    margin-bottom: 0.5em;
+}
+
+
+/****************FILTER OPEN EN DICHT KLIKKEN*********************/
+
+body.filterOpen main button {
+    background-color: white;
+    color: #506DAF;
+    border: 3px solid #506DAF;
+}
+
+body.filterOpen form {
+    visibility: visible;
+    opacity: 1;
+    top: auto;
+    right: 0;
+    margin;
+    1em 1em 0 0;
+}
+
+
+/************************FIELDSET THEMA***************************/
+
+input[type='radio'] {
+    display: none;
+}
+
+fieldset:first-child input[type='radio'] + label {
+    border: 2px solid white;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+}
+
+fieldset input[type='radio']:hover + label {
+    border: 2px solid #ff900b;
+    border-radius: 5px;
+}
+
+#cake {
+    background-image: url("../images/unchecked-icons/cake.png");
+}
+
+#oudhollands {
+    background-image: url("../images/unchecked-icons/oudhollands.png");
+}
+
+#brood {
+    background-image: url("../images/unchecked-icons/brood.png");
+}
+
+#zoet {
+    background-image: url("../images/unchecked-icons/zoet.png");
+}
+
+#moeilijk {
+    background-image: url("../images/unchecked-icons/moeilijk.png");
+}
+
+#feest {
+    background-image: url(../images/unchecked-icons/feest.png);
+}
+
+#bladerdeeg {
+    background-image: url(../images/unchecked-icons/bladerdeeg.png);
+}
+
+#mediterraan {
+    background-image: url(../images/unchecked-icons/mediterraan.png);
+}
+
+input[type='radio']:checked + #cake {
+    background-image: url("../images/checked-icons/cake.png");
+}
+
+input[type='radio']:checked + #oudhollands {
+    background-image: url("../images/checked-icons/oudhollands.png");
+}
+
+input[type='radio']:checked + #brood {
+    background-image: url("../images/checked-icons/brood.png");
+}
+
+input[type='radio']:checked + #zoet {
+    background-image: url("../images/checked-icons/zoet.png");
+}
+
+input[type='radio']:checked + #moeilijk {
+    background-image: url("../images/checked-icons/moeilijk.png");
+}
+
+input[type='radio']:checked + #feest {
+    background-image: url("../images/checked-icons/feest.png");
+}
+
+input[type='radio']:checked + #bladerdeeg {
+    background-image: url("../images/checked-icons/bladerdeeg.png");
+}
+
+input[type='radio']:checked + #mediterraan {
+    background-image: url("../images/checked-icons/mediterraan.png");
+}
+
+
+/************************FIELDSET REGIO***************************/
+
+select {
+    border: 2px solid #506DAF;
+    padding: 0.5em;
+    width: 100%;
+    font-size: 0.8em;
+    font-family: "Myriad Pro", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #506DAF;
+    margin-bottom: 1em;
+}
+
+option {
+    font-size: 1em;
+    font-family: "Myriad Pro", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+/***********************FIELDSET OVERIG***************************/
+
+input[type='radio'] + label {
+    border: 2px solid white;
+    display: inline-block;
+    width: 80px;
+    height: 60px;
+    background-size: contain;
+}
+
+#individueel {
+    background-image: url("../images/unchecked-icons/individueel.png");
+}
+
+#groep {
+    background-image: url("../images/unchecked-icons/groep.png");
+}
+
+#jury {
+    background-image: url("../images/unchecked-icons/metjurylid.png");
+}
+
+input[type='radio']:checked + #individueel {
+    background-image: url("../images/checked-icons/individueel_1.png");
+}
+
+input[type='radio']:checked + #groep {
+    background-image: url("../images/checked-icons/groep.png");
+}
+
+input[type='radio']:checked + #jury {
+    background-image: url("../images/checked-icons/metjurylid_1.png");
+}
+
+
+/********************ASIDE FORMULIER KNOPPEN**********************/
+
+input[type='reset'] {
+    display: inline;
+    border: none;
+    width: 60%;
+    font-size: 0.9em;
+    font-family: "Myriad Pro", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    padding: 0.7em;
+    margin-top: 1em;
+    background-color: #506DAF;
+}
+
+fieldset button {
+    background-color: #506DAF;
+    color: white;
+    border: 3px solid #506DAF;
+    font-size: 0.9em;
+    font-family: "Myriad Pro", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5em 1.2em 0.5em 1.2em;
+    display: inline-block;
+    margin-left: 1em;
+}
+
+
+/****************************************************************
+*****************MAIN ARTICLES OP HET DETAILPAGINA***************
+*****************************************************************/
+
+article header h1 {
+    margin: 0.5em 0 0.2em 0;
+    font-size: 0.9em;
+    text-transform: none;
+    text-transform: uppercase;
+}
+
+article section h2 {
+    font-family: "Myriad Pro", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+    font-size: 0.9em;
+    text-transform: none;
+    text-transform: uppercase;
+}
+
+article header p {
+    margin-top: 2em;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
+article section p {
+    font-size: 0.9em;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+article section:first-of-type p img {
+    width: auto;
+    height: 3.5em;
+    float: left;
+    display: block;
+    margin: 0 1em 1em 0;
+}
+
+article section:first-of-type p:first-of-type img {
+    margin: 0 1.4em 0 0.6em;
+}
+
+article section:first-of-type p {
+    display: block;
+    font-family: sans-serif;
+    clear: both;
+    display: table;
+    margin-bottom: 0.5em;
+}
+
+
+/* Float:left (bij de icons) werkte alleen op deze manier door de p aan te passen aan de img door clear:both; en display: table; te gebruiken. Hierbij had ik gelijk het effect dat ik wilde.
+Oplossing kwam van: https://www.w3schools.com/howto/howto_css_clearfix.asp */
+
+article section:first-of-type p:last-of-type img {
+    margin-bottom: 7em;
+}
+
+#timer {
+    background-color: white;
+    color: #506DAF;
+    border: 3px solid #506DAF;
+    font-size: 1em;
+    font-family: "Myriad Pro", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1em 1.5em;
+    margin: 1em 0;
+}
+
+
+/* Hierbij een id gebruikt omdat de bron waar ik de javascript code voor deze timer had gebruikt ook een id gebruikte */
+
+main article section form {
+    padding: 0em 0em 1em 0em;
+    margin: 1em 1em 0 0;
+}
+
+main article section form label {
+    color: #506DAF;
+    margin-left: 1em;
+}
+
+main article section form fieldset {
+    margin-bottom: 1em;
+}
+
+input[type="number"] {
+    width: 4em;
+    height: 2em;
+}
+
+input[type="number"] + label::after {
+    content: 'n.b. er zijn nog 10 tickets beschikbaar';
+    font-family: sans-serif;
+    text-transform: none;
+    font-weight: normal;
+    color: #FF900B;
+    font-size: 0.9em;
+    display: block;
+    margin-left: 5.2em;
+}
+
+input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    float: left;
+}
+
+input[type="checkbox"] + label {
+    color: black;
+    text-transform: none;
+    font-family: sans-serif;
+    font-weight: normal;
+}
+
+input:disabled[type="checkbox"] + label {
+    color: darkgrey;
+}
+
+input:disabled[type="checkbox"] + label::after {
+    content: 'n.b. deze optie is niet meer beschikbaar';
+    color: #FF900B;
+    font-size: 0.9em;
+    display: block;
+    margin-left: 5.2em;
+}
+
+
+/* Ik heb in de HTML hem zelf op 'disabled' gezet om het ::after pseudoelement te laten zien */
+
+main article section form button {
+    background-color: #FF900B;
+    color: white;
+    border: 3px solid #FF900B;
+    font-size: 1em;
+    font-family: "Myriad Pro", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 1em 1.5em;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/****************************************************************
+*************************RESPONSIVE 600px************************
+*****************************************************************/
+
+@media screen and (min-width: 600px) {
+
+    /*************************HOOFDMENU***************************/
+    body.menuOpen {
+        overflow: auto;
+    }
+
+    .overlay {
+        background-color: rgba(0, 0, 0, 0);
+        opacity: 1;
+    }
+
+    header {
+        height: 65px;
+    }
+
+    header nav ul {
+        position: absolute;
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+        flex-direction: row;
+        display: flex;
+        justify-content: flex-end;
+        height: 3em;
+    }
+
+    header nav li {
+        margin-right: 0.4em;
+    }
+
+    #logo {
+        float: left;
+    }
+
+    header li a {
+        color: black;
+        padding: 0.5em;
+        margin: 17px 0;
+    }
+
+    header li a:hover {
+        color: white;
+        background-color: #4369a4;
+    }
+
+    header li:first-child a:hover {
+        background-color: #FF900B;
+    }
+
+    header li img {
+        display: none;
+    }
+
+    header li p {
+        text-align: center;
+        padding-top: 0;
+        font-size: 1.9vw;
+    }
+
+    header button img {
+        display: none;
+    }
+
+    /**************MAIN SECTIONS OP DE HOOFDPAGINA****************/
+    section {
+        margin-bottom: -0.1em;
+    }
+
+    section:last-child {
+        margin-bottom: 1em;
+    }
+
+    section img {
+        height: 12em;
+    }
+
+    main a {
+        font-size: 1em;
+    }
+
+    /***********MAIN ARCTICLES OP HET OVERZICHTSPAGINA************/
+    main.searchArticles article header h1 {
+        transition: 1s;
+        font-size: 1.1em;
+    }
+
+    article img {
+        height: 10em;
+    }
+
+    article header p:first-of-type {
+        transition: 1s;
+        margin: 0;
+    }
+
+    article header img {
+        transition: 1s;
+        width: auto;
+        height: 3.6em;
+    }
+
+    body.filterOpen form {
+        visibility: visible;
+        opacity: 1;
+        top: auto;
+        right: 0;
+        margin: 1em 1em 0 0;
+    }
+
+    /***********MAIN ARCTICLES OP HET DETAILSPAGINA************/
+    article header h1 {
+        font-size: 1.2em;
+    }
+
+    article section:first-of-type p:last-of-type img {
+        margin-bottom: 3em;
+    }
+}
+
+
+/****************************************************************
+*************************RESPONSIVE 800px************************
+*****************************************************************/
+
+@media screen and (min-width: 800px) {
+
+    /*************************HOOFDMENU***************************/
+    header li p {
+        font-size: 15.2px;
+    }
+
+    /**************MAIN SECTIONS OP DE HOOFDPAGINA****************/
+    main.homeSections {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
+        margin: 1em;
+    }
+
+    section {
+        margin: 0 0 -0.1em 0;
+    }
+
+    section:last-child {
+        margin-bottom: 0;
+    }
+
+    section img {
+        height: 20em;
+        max-height: 100vh;
+    }
+
+    section header {
+        font-size: 1em;
+    }
+
+    /***********MAIN ARCTICLES OP HET OVERZICHTSPAGINA************/
+    main.searchArticles {
+        display: grid;
+        grid-template-areas: "header header" "content side";
+        grid-template-columns: 1fr 300px;
+        grid-gap: 1em;
+    }
+
+    main.searchArticles h1 {
+        grid-area: header;
+    }
+
+    main.searchArticles a {
+        grid-area: content;
+    }
+
+    main.searchArticles article > img {
+        padding: 0em;
+    }
+
+    /* Ook een class moeten geven zodat de main niet aangetast wordt op de andere pagina's */
+    /* Ik heb een div om de articles moeten zetten om dit goed te laten werken want anders overlapten de articles elkaar */
+    /***************FILTER OP HET OVERZICHTSPAGINA****************/
+    main.searchArticles aside {
+        grid-area: side;
+    }
+
+    main.searchArticles button:first-child {
+        visibility: hidden;
+    }
+
+    main.searchArticles aside form {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /***************MAIN ARTICLE OP HET DETAILPAGINA****************/
+    article > img {
+        object-fit: cover;
+        width: 100%;
+        padding-right: 1em;
+        height: 20em;
+        object-position: top;
+        object-position: 0px 30%;
+    }
+
+    main > article header {
+        width: 96%;
+        padding: 1em;
+        position: absolute;
+        top: 11em;
+        color: white;
+        font-family: "Myriad Pro", sans-serif;
+        text-transform: uppercase;
+        font-size: 1.1em;
+    }
+
+    main > article header h1 {
+        text-shadow: 0px 1px 6px black;
+        font-size: 2em;
+    }
+
+    main > article header h2 {
+        text-shadow: 0px 1px 6px black;
+        font-size: 1.5em;
+    }
+
+    main > article header p:first-of-type {
+        transition: 0s;
+    }
+
+    main > article section {
+        margin: 1em;
+    }
+
+    main > article section:first-of-type p:last-of-type img {
+        margin-bottom: 5em;
+    }
+
+    .workshopInfo {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
+    }
+
+    .workshopSection1 {
+        width: 100%;
+    }
+
+    .workshopSection2 {
+        width: 100%;
+        padding-right: 2em;
+    }
+
+    .workshopSection3 {
+        width: 100%;
+    }
+}
